@@ -12,6 +12,7 @@
 		448D894119632D6E006ADF78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D893F19632D6E006ADF78 /* Main.storyboard */; };
 		448D894319632D6E006ADF78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448D894219632D6E006ADF78 /* Images.xcassets */; };
 		448D894F19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D894E19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift */; };
+		448D895919632E3B006ADF78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448D895819632E3B006ADF78 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		448D894819632D6F006ADF78 /* iBeaconTemplateSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconTemplateSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		448D894D19632D6F006ADF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		448D894E19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconTemplateSwiftTests.swift; sourceTree = "<group>"; };
+		448D895819632E3B006ADF78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448D895919632E3B006ADF78 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +60,7 @@
 		448D892D19632D6E006ADF78 = {
 			isa = PBXGroup;
 			children = (
+				448D895819632E3B006ADF78 /* CoreLocation.framework */,
 				448D893819632D6E006ADF78 /* iBeaconTemplateSwift */,
 				448D894B19632D6F006ADF78 /* iBeaconTemplateSwiftTests */,
 				448D893719632D6E006ADF78 /* Products */,
@@ -158,6 +162,11 @@
 				TargetAttributes = {
 					448D893519632D6E006ADF78 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					448D894719632D6F006ADF78 = {
 						CreatedOnToolsVersion = 6.0;
@@ -326,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBeaconTemplateSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -337,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBeaconTemplateSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
