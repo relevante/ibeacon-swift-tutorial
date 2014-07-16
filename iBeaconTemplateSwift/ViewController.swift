@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView
-    var beacons: CLBeacon[]?
+    var beacons: [CLBeacon]?
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 extension ViewController: UITableViewDataSource {
     func tableView(tableView: UITableView!,
         numberOfRowsInSection section: Int) -> Int {
-            if(beacons != nil) {
+            if beacons {
                 return beacons!.count
             } else {
                 return 0

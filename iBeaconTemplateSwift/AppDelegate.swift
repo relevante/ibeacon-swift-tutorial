@@ -82,10 +82,10 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!,
-        didRangeBeacons beacons: AnyObject[]!,
+        didRangeBeacons beacons: [AnyObject]!,
         inRegion region: CLBeaconRegion!) {
             let viewController:ViewController = window!.rootViewController as ViewController
-            viewController.beacons = beacons as CLBeacon[]?
+            viewController.beacons = beacons as [CLBeacon]?
             viewController.tableView.reloadData()
             
             NSLog("didRangeBeacons");
