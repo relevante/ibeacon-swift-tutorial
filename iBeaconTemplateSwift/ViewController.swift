@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var tableView: UITableView
+    @IBOutlet var tableView: UITableView!
     var beacons: [CLBeacon]?
                             
     override func viewDidLoad() {

@@ -408,6 +408,7 @@
 				448D895419632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		448D895519632D6F006ADF78 /* Build configuration list for PBXNativeTarget "iBeaconTemplateSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +417,7 @@
 				448D895719632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
