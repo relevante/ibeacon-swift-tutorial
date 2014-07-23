@@ -34,13 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView!,
         cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-            var cell:UITableViewCell? =
-            (tableView.dequeueReusableCellWithIdentifier("MyIdentifier") as UITableViewCell)
-            
-            if(cell == nil) {
-                cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyIdentifier")
-                cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            }
+            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
             
             let beacon:CLBeacon = beacons![indexPath.row]
             var proximityLabel = ""
@@ -56,13 +50,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 proximityLabel = "Unknown"
             }
             
-            cell!.textLabel.text = proximityLabel
+            cell.textLabel.text = proximityLabel
             
             let detailLabel:String = "Major: \(beacon.major.integerValue), " +
                 "Minor: \(beacon.minor.integerValue), " +
                 "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
-            cell!.detailTextLabel.text = detailLabel
+            cell.detailTextLabel.text = detailLabel
             
             return cell
     }
