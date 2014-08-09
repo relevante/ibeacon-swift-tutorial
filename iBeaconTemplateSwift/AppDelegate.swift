@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        let uuidString = "EBEFD083-70A2-47C8-9837-E7B5634DF524"
-        let beaconIdentifier = "iBeaconModules.us"
+        let uuidString = "ACFD065E-C3C0-11E3-9BBE-1A514932AC01"
+        let beaconIdentifier = "BlueUp-01-000104"
         let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
             identifier: beaconIdentifier)
@@ -82,14 +82,18 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!,
-        didRangeBeacons beacons: AnyObject[]!,
+        didRangeBeacons beacons: [AnyObject]!,
         inRegion region: CLBeaconRegion!) {
+            
             let viewController:ViewController = window!.rootViewController as ViewController
-            viewController.beacons = beacons as CLBeacon[]?
+            
+            viewController.beacons = beacons as [CLBeacon]?
+            
             viewController.tableView.reloadData()
             
             NSLog("didRangeBeacons");
-            var message:String = ""
+            
+            var message = ""
             
             if(beacons.count > 0) {
                 let nearestBeacon:CLBeacon = beacons[0] as CLBeacon

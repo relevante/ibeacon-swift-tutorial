@@ -338,6 +338,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D978F46E-67CD-43EB-8460-CE29224236A3";
 			};
 			name = Debug;
 		};
@@ -350,6 +351,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D978F46E-67CD-43EB-8460-CE29224236A3";
 			};
 			name = Release;
 		};
@@ -408,6 +410,7 @@
 				448D895419632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		448D895519632D6F006ADF78 /* Build configuration list for PBXNativeTarget "iBeaconTemplateSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +419,7 @@
 				448D895719632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
