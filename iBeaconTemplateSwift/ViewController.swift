@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView!,
         numberOfRowsInSection section: Int) -> Int {
-            if beacons {
+            if beacons != nil {
                 return beacons!.count
             } else {
                 return 0
