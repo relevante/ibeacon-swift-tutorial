@@ -13,6 +13,7 @@
 		448D894319632D6E006ADF78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448D894219632D6E006ADF78 /* Images.xcassets */; };
 		448D894F19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D894E19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift */; };
 		448D895919632E3B006ADF78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448D895819632E3B006ADF78 /* CoreLocation.framework */; };
+		CE1BDD9119BD376F00AFB1ED /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = CE1BDD9019BD376F00AFB1ED /* tos_beep.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		448D894D19632D6F006ADF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		448D894E19632D6F006ADF78 /* iBeaconTemplateSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconTemplateSwiftTests.swift; sourceTree = "<group>"; };
 		448D895819632E3B006ADF78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE1BDD9019BD376F00AFB1ED /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		448D893919632D6E006ADF78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE1BDD9019BD376F00AFB1ED /* tos_beep.caf */,
 				448D893A19632D6E006ADF78 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				448D894119632D6E006ADF78 /* Main.storyboard in Resources */,
+				CE1BDD9119BD376F00AFB1ED /* tos_beep.caf in Resources */,
 				448D894319632D6E006ADF78 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +412,7 @@
 				448D895419632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		448D895519632D6F006ADF78 /* Build configuration list for PBXNativeTarget "iBeaconTemplateSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +421,7 @@
 				448D895719632D6F006ADF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
