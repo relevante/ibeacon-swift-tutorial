@@ -75,9 +75,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 }
 
 extension AppDelegate: CLLocationManagerDelegate {
-    func sendLocalNotificationWithMessage(message: String!) {
+	func sendLocalNotificationWithMessage(message: String!, playSound: Bool) {
         let notification:UILocalNotification = UILocalNotification()
         notification.alertBody = message
+		
+		if(playSound) {
+			// classic star trek communicator beep
+			//	http://www.trekcore.com/audio/
+			//
+			// note: convert mp3 and wav formats into caf using:
+			//	"afconvert -f caff -d LEI16@44100 -c 1 in.wav out.caf"
+			// http://stackoverflow.com/a/10388263
+
+			notification.soundName = "tos_beep.caf";
+		}
+		
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
@@ -90,6 +102,8 @@ extension AppDelegate: CLLocationManagerDelegate {
             
             NSLog("didRangeBeacons");
             var message:String = ""
+			
+			var playSound = false
             
             if(beacons.count > 0) {
                 let nearestBeacon:CLBeacon = beacons[0] as CLBeacon
@@ -103,6 +117,7 @@ extension AppDelegate: CLLocationManagerDelegate {
                 switch nearestBeacon.proximity {
                 case CLProximity.Far:
                     message = "You are far away from the beacon"
+					playSound = true
                 case CLProximity.Near:
                     message = "You are near the beacon"
                 case CLProximity.Immediate:
@@ -111,11 +126,18 @@ extension AppDelegate: CLLocationManagerDelegate {
                     return
                 }
             } else {
+				
+				if(lastProximity == CLProximity.Unknown) {
+					return;
+				}
+				
                 message = "No beacons are nearby"
+				playSound = true
+				lastProximity = CLProximity.Unknown
             }
-            
+			
             NSLog("%@", message)
-            sendLocalNotificationWithMessage(message)
+			sendLocalNotificationWithMessage(message, playSound: playSound)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -124,7 +146,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.startUpdatingLocation()
             
             NSLog("You entered the region")
-            sendLocalNotificationWithMessage("You entered the region")
+            sendLocalNotificationWithMessage("You entered the region", playSound: false)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -133,7 +155,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.stopUpdatingLocation()
             
             NSLog("You exited the region")
-            sendLocalNotificationWithMessage("You exited the region")
+            sendLocalNotificationWithMessage("You exited the region", playSound: true)
     }
 }
 
